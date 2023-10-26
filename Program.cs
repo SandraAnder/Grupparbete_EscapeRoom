@@ -4,8 +4,12 @@ namespace Grupparbete_EscapeRoom;
 
 class Program
 {
-    static void Main(string[] args)
+    
+    static void Main()
     {   // Här ska vi göra en meny.
+        List <FreeText> questions = new List<FreeText>();
+        questions.Add(new FreeText("Vad heter sköldpaddan i Bamse?", "Skalman"));
+        
         bool isRunning = true;
         while (isRunning)
         {
@@ -15,7 +19,10 @@ class Program
             switch (choice)
             {
                 case "1":
-
+                    for (int i = 0; i < questions.Count; i++)
+                    {
+                        Console.WriteLine(questions[0].QuestionText);
+                    }                    
                     break;
                 case "2":
                     isRunning = false;

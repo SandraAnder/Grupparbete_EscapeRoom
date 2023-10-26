@@ -1,16 +1,16 @@
 using System.ComponentModel;
 
-public class Room
+public class Question
 {
     public string QuestionText {get; set;}
     
-    public Room(string questiontext)
+    public Question(string questiontext)
     {
         QuestionText = questiontext;
     }
 }
 
-class FreeText : Room
+class FreeText : Question
 {
     public string? FreeTextAnswer {get; set;}
 
