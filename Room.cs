@@ -1,10 +1,10 @@
 class Room
 {
+    List <FreeText> questions = new List<FreeText>();
     public void Room1()
     {
-        List <FreeText> questions = new List<FreeText>();
         questions.Add(new FreeText("Vad heter sköldpaddan i Bamse? ", "skalman"));
-        
+        questions.Add(new FreeText("Vad heter kaninen i Bamse?", "lille skutt"));
         for (int i = 0; i < questions.Count; i++)
         {
             Console.Write(questions[i].QuestionText);
@@ -25,7 +25,7 @@ class Room
 
     public void Room2()
     {
-
+        questions.Add(new FreeText("Vad heter sköldpaddan i Bamse? ", "skalman"));
     }
 
 }

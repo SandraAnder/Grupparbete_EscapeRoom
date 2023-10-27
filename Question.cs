@@ -31,4 +31,13 @@ class FreeText : Question
             return false;
     }
 }
-
+class MultipleChoice : Question
+{
+    public string MCOption1 {get; set;}
+    public string MCOption2 {get; set;}
+    public MultipleChoice (string questiontext, string mCOption1, string mCOption2) : base (questiontext)
+    {
+        MCOption1 = mCOption1;
+        MCOption2 = mCOption2;
+    }
+}

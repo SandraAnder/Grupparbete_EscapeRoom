@@ -11,9 +11,7 @@ class Program
    static void Main()
    {   // Här ska vi göra en meny.
       
-      List <FreeText> questions = new List<FreeText>();
-      questions.Add(new FreeText("Vad heter sköldpaddan i Bamse? ", "skalman"));
-
+      
       //int playerLives = 10;
       
       bool isRunning = true;
