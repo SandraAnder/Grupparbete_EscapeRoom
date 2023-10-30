@@ -21,4 +21,5 @@ Görare det svårare
 Olika svarsalternativ – tex 1, X, 2
 Vad händer om man svarar fel? Får man börja om, försöka igen eller förlorar man liv/poäng? (ska man ha liv/rum eller för hela spelet?)
 Tid.
+Få en ledtråd för ett liv.
 Visuellt – Blazor.
