@@ -10,9 +10,7 @@ class Program
      
    static void Main()
    {   // Här ska vi göra en meny.
-      
-      
-      //int playerLives = 10;
+
       
       bool isRunning = true;
       while (isRunning)
