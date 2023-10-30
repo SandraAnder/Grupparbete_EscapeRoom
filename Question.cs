@@ -76,22 +76,5 @@ class OneXTwo : Question
             return true;
         else
             return false;
-    }
-}
-
-class Riddle : Question
-{
-    string RiddleAnswer {get; set;}
-
-    public Riddle(string questiontext, string riddleAnswer) :base (questiontext)
-    {
-        RiddleAnswer = riddleAnswer;
-    }
-    public override bool CheckAnswer(string userAnswer)
-    {
-        if(userAnswer == RiddleAnswer)
-            return true;
-        else
-            return false;
-    } //Måste vi verkligen ha en Checkanswer till varje??
+    }   //Måste vi verkligen ha en Checkanswer till varje??
 }
