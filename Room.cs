@@ -2,12 +2,15 @@ public class Challange1
 {
     public int playerLives = 5;
     List <Question> questions = new List<Question>();
+    
 
     public void Room1()
     {
         Console.WriteLine("Du kliver in i rummet, där ser du en obäddad säng tvärs över rummet. \nTill höger ser du en kamin med en blodig handduk hängande på tork. \nTill vänster ser du ett skrivbord med en uppslagen karta. \nDörren bakom dig slår igen och låser sig. Nu behöver du hitta en annan väg ut...");
-        
-        questions.Add(new FreeText("Det är som alla vet, polisen som sköter brottsbekämpningen. \nMen vad kallas det när allmänheten griper en misstänkt? ", "Envarsgripande"));
+        Console.WriteLine("Tryck enter för att fortsätta");
+        Console.ReadLine();
+       
+        questions.Add(new FreeText("Det är som alla vet, polisen som sköter brottsbekämpningen. \nMen vad kallas det när allmänheten griper en misstänkt? ", "envarsgripande"));
 
         bool isLooping = true;
         while (isLooping)
@@ -57,37 +60,37 @@ public class Challange1
     }
     public void Room2()
     {
-        Console.WriteLine("HEJ HOPP RUM 2");
+        Console.WriteLine("Du tar ett steg in i något som ser ut som ett förråd och en unken doft slår mot ansiktet. \nHyllor fyllda med lådor,burkar och diverse bråte sträcker sig längst väggarna. \nDet står ett kassaskåp i hörnet, du går fram till kassakåpet och upptäcker att det är låst. \nFör att öppna skåpet behövs en fyrsiffrig kod.");
         
-        questions.Add(new FreeText("Du ser en signatur av Johanna Möller. Även kallad? ", "arbogakvinnan"));
-        questions.Add(new FreeText("Vad heter kaninen i Bamse? ", "lille skutt"));
-        questions.Add(new MultipleChoice("Vad kommer efter hej? ", "hopp", "dopp", "hopp"));
-        questions.Add(new OneXTwo("Vad vill du äta till middag? ", "falafel", "tacos", "spagetti", "falafel"));
-        questions.Add(new FreeText("Jag har städer, men inget hus. Jag har skog, men inga träd. Jag har floder, men inget vatten. Vad är jag? ", "En karta. Kartor har städer, skogar och floder ritade på dem, men de är inte verkliga hus, träd eller vatten"));
-
+        //questions.Add(new FreeText("Vilket var den vanligaste typen av mordvapen i Sverige 2022?", "skjutvapen"));
+        questions.Add(new OneXTwo("Vad heter den ökände seriemördaren också kallad “Leather appron” som härjade runt i Whitechappel, London på 1800-talet?", "falafel", "Jack The Ripper", "spagetti", "jack the ripper"));
+        questions.Add(new OneXTwo("Hur många år i snitt sitter en livstidsdömd person i fängelse i Sverige? ", "16", "20", "10", "16"));
+        
         bool isLooping = true;
         while (isLooping)
         {
             Console.WriteLine("-------------------------------");
-            Console.WriteLine("Vad vill du göra?");
-            Console.WriteLine("1. Gå till den obäddade sängen.");
-            Console.WriteLine("2. Gå fram till kaminen och den blodiga handduken.");
-            Console.WriteLine("3. Gå till skrivbordet och kartan.");
+            Console.WriteLine("Vart vill du leta?");
+            Console.WriteLine("1. Hyllan längst upp till höger.");
+            Console.WriteLine("2. Trätunnan mitt i rummet.");
+            Console.WriteLine("3. Gå till kassaskåpet.");
             string? input = Console.ReadLine();
             switch (input)
             {
                 case "1":
-                    Console.WriteLine("Du kikar under täcket, men det är tomt.");
+                    Console.WriteLine("Du rotar runt på hyllan och hittar en liten papperslapp där det står '..32' . Kan det här höra till koden?");
+                    Console.WriteLine("Tryck enter för att fortsätta");
+                    Console.ReadLine();
                     break;
                 case "2":
-                    Console.WriteLine("Du lyfter upp handduken och ett halvt foto ramlar ut. På baksidan står det: ");
+                    Console.WriteLine("Du lyfter på locket. ");
                     for (int i = 0; i < questions.Count; i++)
                     {
-                        Console.Write(questions[0].QuestionText);
+                        Console.Write(questions[i].QuestionText);
                         string? userAns = Console.ReadLine();
                         if (questions[i].CheckAnswer(userAns+"".ToLower()) == true)
                         {
-                            Console.WriteLine("Rätt! Du hör en dörr öppnas bakom en gardin och du går in.");
+                            Console.WriteLine("Rätt!");
                             Console.WriteLine();
                             
                         }
