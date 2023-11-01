@@ -11,6 +11,8 @@ class Game
             Console.ReadLine();
             Challange1 room1 = new Challange1();
             room1.Room1();
+            Challange1 room2 = new Challange1();
+            room2.Room2();
 
         }
     }
