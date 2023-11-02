@@ -62,7 +62,8 @@ public class Challange1
         
         //questions.Add(new FreeText("Vilket var den vanligaste typen av mordvapen i Sverige 2022?", "skjutvapen"));
         questions.Add(new FreeText("Vad heter den ökände seriemördaren också kallad “Leather appron” som härjade runt i Whitechappel, London på 1800-talet?, \nA. Jack The Ripper \nB. Spagetti \nC. Falafel", "a"));
-        questions.Add(new OneXTwo("Hur många år i snitt sitter en livstidsdömd person i fängelse i Sverige? ", "16", "20", "10", "16"));
+        questions.Add(new FreeText("Hur många år i snitt sitter en livstidsdömd person i fängelse i Sverige? \nA. 16 \nB. 20 \nC. 10", "a"));
+        //Det blir fel svar. VARFÖR????
         
         bool isLooping = true;
         while (isLooping)
@@ -84,11 +85,12 @@ public class Challange1
                     Console.WriteLine("Du lyfter på locket. ");
                     for (int i = 0; i < questions.Count; i++)
                     {
-                        Console.Write(questions[i].QuestionText);
+                        Console.WriteLine(questions[2].QuestionText);
+                        Console.Write("Ditt val: ");
                         string? userAns = Console.ReadLine();
                         if (questions[i].CheckAnswer(userAns+"".ToLower()) == true)
                         {
-                            Console.WriteLine("Rätt!");
+                            Console.WriteLine("Rätt! Kan svaret vara en del av den fyrsiffriga koden?");
                             Console.WriteLine();
                         }
                         else
@@ -103,7 +105,30 @@ public class Challange1
                     }
                     break;
                 case "3":
-                    Console.WriteLine("Du går fram till skrivbordet och tittar på kartan. \nDär ");
+                    Console.WriteLine("Du går till kassaskåpet. Skriv in en fyrsiffrig kod.");
+                    int safeCode = int.Parse(Console.ReadLine());
+                    if (safeCode == 1632)
+                        Console.WriteLine("Du lyckades öppna kassaskåpet. Här kommer en fråga: ");
+                        for (int i = 0; i < questions.Count; i++)
+                        {
+                        Console.WriteLine(questions[1].QuestionText);
+                        Console.Write("Ditt val: ");
+                        string? userAns = Console.ReadLine();
+                        if (questions[i].CheckAnswer(userAns+"".ToLower()) == true)
+                        {
+                            Console.WriteLine("Rätt! Bakpanelen öppnar sig och du kliver igenom till nästa rum.");
+                            Console.WriteLine();
+                        }
+                        else
+                        {
+                            Console.WriteLine("Fel");
+                            playerLives--;
+                            Console.WriteLine($"Du har nu {playerLives} liv kvar...");
+                            Console.WriteLine();
+                            break;
+                        }
+                        Console.ReadLine();
+                    }
                     break;
                 default:
                     Console.WriteLine("Men kom igen! Svara 1, 2 eller 3!");
