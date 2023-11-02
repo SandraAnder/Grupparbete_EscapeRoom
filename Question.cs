@@ -20,6 +20,7 @@ public class Question
 class FreeText : Question
 {
     public string? FreeTextAnswer {get; set;}
+    // public string Clue {get; set;} Fixa så man kan lägga in ledtrådar!
 
     public FreeText(string questiontext, string freeTextAnswer) : base(questiontext)
     {
@@ -35,26 +36,25 @@ class FreeText : Question
 }
 class MultipleChoice : Question
 {
-    public string MCOption1 {get; set;}
-    public string MCOption2 {get; set;}
+    public string MCCorrectAnswer1 {get; set;}
+    public string MCCorrectAnswer2 {get; set;}
 
-    public string MCCorrectAnswer {get; set;}
-
-    public MultipleChoice (string questiontext, string mCOption1, string mCOption2, string mCCorrectAnswer) : base (questiontext)
+    public MultipleChoice (string questiontext, string mCCorrectAnswer1, string mCCorrectAnswer2) : base (questiontext)
     {
-        MCOption1 = mCOption1;
-        MCOption2 = mCOption2;
-        MCCorrectAnswer = mCCorrectAnswer;
+        MCCorrectAnswer1 = mCCorrectAnswer1;
+        MCCorrectAnswer2 = mCCorrectAnswer2;
     }
     public override bool CheckAnswer(string userAnswer)
     {
-        if(userAnswer == MCCorrectAnswer)
+        if(userAnswer == MCCorrectAnswer1)
+            return true;
+        else if (userAnswer == MCCorrectAnswer2)
             return true;
         else
             return false;
     }
 }
-
+/*
 class OneXTwo : Question
 {
     public string One {get; set;}
@@ -78,3 +78,4 @@ class OneXTwo : Question
             return false;
     }   //Måste vi verkligen ha en Checkanswer till varje??
 }
+*/
