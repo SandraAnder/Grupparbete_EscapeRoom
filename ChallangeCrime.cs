@@ -6,7 +6,9 @@ public class ChallangeCrime
 
     public void Room1()
     {
-        Console.WriteLine("Du kliver in i rummet, där ser du en obäddad säng tvärs över rummet. \nTill höger ser du en kamin med en blodig handduk hängande på tork. \nTill vänster ser du ett skrivbord med en uppslagen karta. \nDörren bakom dig slår igen och låser sig. Nu behöver du hitta en annan väg ut...");
+        Console.WriteLine("        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+        Console.WriteLine("        ‡        Du kliver in i rummet, där ser du en obäddad säng tvärs över rummet.      ‡ \n        ‡         Till höger ser du en kamin med en blodig handduk hängande på tork.       ‡ \n        ‡            Till vänster ser du ett skrivbord med en uppslagen karta.             ‡ \n        ‡ Dörren bakom dig slår igen och låser sig. Nu behöver du hitta en annan väg ut... ‡ ");
+        Console.WriteLine("        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
         Console.ReadLine();
         questions.Add(new FreeText("Vilket var den vanligaste typen av mordvapen i Sverige 2022? \nA. Kniv \nB. Pilbåge \nC. Skjutvapen", "c"));
         bool isLooping = true;
