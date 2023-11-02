@@ -7,11 +7,8 @@ public class Challange1
     public void Room1()
     {
         Console.WriteLine("Du kliver in i rummet, där ser du en obäddad säng tvärs över rummet. \nTill höger ser du en kamin med en blodig handduk hängande på tork. \nTill vänster ser du ett skrivbord med en uppslagen karta. \nDörren bakom dig slår igen och låser sig. Nu behöver du hitta en annan väg ut...");
-        Console.WriteLine("Tryck enter för att fortsätta");
         Console.ReadLine();
-       
-        questions.Add(new FreeText("Det är som alla vet, polisen som sköter brottsbekämpningen. \nMen vad kallas det när allmänheten griper en misstänkt? ", "envarsgripande"));
-
+        questions.Add(new FreeText("Det är polisen som sköter brottsbekämpningen. \nMen vad kallas det när allmänheten griper en misstänkt? ", "envarsgripande"));
         bool isLooping = true;
         while (isLooping)
         {
@@ -25,6 +22,7 @@ public class Challange1
             {
                 case "1":
                     Console.WriteLine("Du kikar under täcket, men det är tomt.");
+                    Console.ReadLine();
                     break;
                 case "2":
                     Console.WriteLine("Du lyfter upp handduken och ett halvt foto ramlar ut. På baksidan står det: ");
@@ -44,9 +42,9 @@ public class Challange1
                             playerLives--;
                             Console.WriteLine($"Du har nu {playerLives} liv kvar...");
                             Console.WriteLine();
+                            Console.ReadLine();
                             break;
                         }
-                        Console.ReadLine();
                     }
                     break;
                 case "3":
@@ -63,7 +61,7 @@ public class Challange1
         Console.WriteLine("Du tar ett steg in i något som ser ut som ett förråd och en unken doft slår mot ansiktet. \nHyllor fyllda med lådor,burkar och diverse bråte sträcker sig längst väggarna. \nDet står ett kassaskåp i hörnet, du går fram till kassakåpet och upptäcker att det är låst. \nFör att öppna skåpet behövs en fyrsiffrig kod.");
         
         //questions.Add(new FreeText("Vilket var den vanligaste typen av mordvapen i Sverige 2022?", "skjutvapen"));
-        questions.Add(new OneXTwo("Vad heter den ökände seriemördaren också kallad “Leather appron” som härjade runt i Whitechappel, London på 1800-talet?", "falafel", "Jack The Ripper", "spagetti", "jack the ripper"));
+        questions.Add(new FreeText("Vad heter den ökände seriemördaren också kallad “Leather appron” som härjade runt i Whitechappel, London på 1800-talet?, \nA. Jack The Ripper \nB. Spagetti \nC. Falafel", "a"));
         questions.Add(new OneXTwo("Hur många år i snitt sitter en livstidsdömd person i fängelse i Sverige? ", "16", "20", "10", "16"));
         
         bool isLooping = true;
@@ -92,7 +90,6 @@ public class Challange1
                         {
                             Console.WriteLine("Rätt!");
                             Console.WriteLine();
-                            
                         }
                         else
                         {
