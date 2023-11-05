@@ -28,12 +28,12 @@ public class ChallangeCrime
                     break;
                 case "2":
                     Console.WriteLine("Du lyfter upp handduken och ett halvt foto ramlar ut. På baksidan står det: ");
-                    for (int i = 0; i < questions.Count; i++)
+                    for (int i = 0; i < questions.Count;)
                     {
                         Console.WriteLine(questions[0].QuestionText);
                         Console.Write("Ditt val: ");
                         string? userAns = Console.ReadLine();
-                        if (questions[i].CheckAnswer(userAns+"".ToLower()) == true)
+                        if (questions[i].CheckAnswer(userAns.ToLower()) == true)
                         {
                             Console.WriteLine("Rätt! Du hör en dörr öppnas bakom en gardin och du går in.");
                             Console.WriteLine();
@@ -88,7 +88,7 @@ public class ChallangeCrime
                         Console.WriteLine(questions[2].QuestionText);
                         Console.Write("Ditt val: ");
                         string? userAns = Console.ReadLine();
-                        if (questions[2].CheckAnswer(userAns+"".ToLower()) == true)
+                        if (questions[2].CheckAnswer(userAns.ToLower()) == true)
                         {
                             Console.WriteLine("Rätt! Kan svaret vara en del av den fyrsiffriga koden?");
                             Console.WriteLine();
@@ -106,26 +106,34 @@ public class ChallangeCrime
                 case "3":
                     Console.WriteLine("Du går till kassaskåpet. Skriv in en fyrsiffrig kod.");
                     int safeCode = int.Parse(Console.ReadLine()+"");
-                    if (safeCode == 1632)
+                    if (safeCode != 1632)
+                    {
+                        Console.WriteLine("Fel");
+                        playerLives--;
+                        Console.WriteLine($"Du har nu {playerLives} liv kvar...");
+                        Console.WriteLine();
+                        break;
+                    }
+                    else if (safeCode == 1632)
                         Console.WriteLine("Du lyckades öppna kassaskåpet. Här kommer en fråga: ");
                         
                         Console.WriteLine(questions[1].QuestionText);
                         Console.Write("Ditt val: ");
                         string? userAn = Console.ReadLine();
-                        if (questions[1].CheckAnswer(userAn+"".ToLower()) == true)
+                        if (questions[1].CheckAnswer(userAn.ToLower()) == true)
                         {
                             Console.WriteLine("Rätt! Bakpanelen öppnar sig och du kliver igenom till nästa rum.");
                             Console.WriteLine();
                             return;
                         }
-                        else
+                        /*else
                         {
                             Console.WriteLine("Fel");
                             playerLives--;
                             Console.WriteLine($"Du har nu {playerLives} liv kvar...");
                             Console.WriteLine();
                             break;
-                        }
+                        }*/
                     Console.ReadLine();
                     break;
                 default:
@@ -162,7 +170,7 @@ public class ChallangeCrime
                         Console.WriteLine(questions[3].QuestionText);
                         Console.Write("Ditt val: ");
                         string? userAns = Console.ReadLine();
-                        if (questions[3].CheckAnswer(userAns+"".ToLower()) == true)
+                        if (questions[3].CheckAnswer(userAns.ToLower()) == true)
                         {
                             Console.WriteLine("Rätt! Kan svaret vara en del av den fyrsiffriga koden?");
                             Console.WriteLine();
@@ -186,7 +194,7 @@ public class ChallangeCrime
                         Console.WriteLine(questions[1].QuestionText);
                         Console.Write("Ditt val: ");
                         string? userAn = Console.ReadLine();
-                        if (questions[1].CheckAnswer(userAn+"".ToLower()) == true)
+                        if (questions[1].CheckAnswer(userAn.ToLower()) == true)
                         {
                             Console.WriteLine("Rätt! Bakpanelen öppnar sig och du kliver igenom till nästa rum.");
                             Console.WriteLine();
